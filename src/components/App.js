@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Tooltip from './Tooltip';
-import './App.css';
+import './../styles/App.css';
 
 function App() {
   return (
@@ -17,6 +17,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
