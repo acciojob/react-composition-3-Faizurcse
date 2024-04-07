@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
-import './../styles/Tooltip.css';
 
-function Tooltip({ text, children }) {
+import React, { useState } from "react";
+
+const Tooltip = ({ text, children }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const handleMouseEnter = () => {
-    setShowTooltip(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowTooltip(false);
-  };
-
   return (
-    <div className="tooltip-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}>
       {children}
-      {showTooltip && <span className="tooltiptext">{text}</span>}
+      {showTooltip && <div className="tooltiptext">{text}</div>}
     </div>
   );
-}
+};
 
-export default Tooltip;
+export default Tooltip;
